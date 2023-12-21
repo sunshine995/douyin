@@ -1,0 +1,13 @@
+com\douyin\service\pojo\Vlog.class
+com\douyin\service\mapper\CommentMapper.class
+com\douyin\service\pojo\Comment.class
+com\douyin\service\mapper\VlogMapper.class
+com\douyin\service\pojo\Users.class
+com\imooc\mybatis\utils\GeneratorDisplay.class
+com\douyin\service\mapper\MyLikedVlogMapper.class
+com\imooc\pojo\Vlog.class
+com\douyin\service\mapper\FansMapper.class
+com\imooc\my\mapper\MyMapper.class
+com\douyin\service\pojo\Fans.class
+com\douyin\service\mapper\UsersMapper.class
+com\douyin\service\pojo\MyLikedVlog.class

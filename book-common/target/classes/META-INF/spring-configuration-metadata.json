@@ -1,0 +1,22 @@
+{
+  "groups": [
+    {
+      "name": "tencent.cloud",
+      "type": "com.douyin.service.utils.TencentCloudProperties",
+      "sourceType": "com.douyin.service.utils.TencentCloudProperties"
+    }
+  ],
+  "properties": [
+    {
+      "name": "tencent.cloud.secret-id",
+      "type": "java.lang.String",
+      "sourceType": "com.douyin.service.utils.TencentCloudProperties"
+    },
+    {
+      "name": "tencent.cloud.secret-key",
+      "type": "java.lang.String",
+      "sourceType": "com.douyin.service.utils.TencentCloudProperties"
+    }
+  ],
+  "hints": []
+}

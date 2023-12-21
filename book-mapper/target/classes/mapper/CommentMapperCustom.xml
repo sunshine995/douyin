@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.douyin.service.mapper.CommentMapperCustom" >
+
+<!--思考 ：  阿里的规范明确不能超过三表关联，这里已经达到了四张表，我们应该如何去优化，是的sql脚本查询变成两张或者三张表
+又或者我们不使用数据库，使用中间件来实现？
+-->
+  <select id="getCommentList" resultType="com.douyin.service.vo.CommentVO" parameterType="map">
+
+    SELECT
+        c.id as commentId,
+        c.vlog_id as vlogId,
+        u.id as vlogerId,
+        u.nickname as commentUserNickname,
+        u.face as commentUserFace,
+        c.father_comment_id as fatherCommentId,
+        c.comment_user_id as commentUserId,
+        c.content as content,
+        c.like_counts = likeCounts,
+        fu.nickname as replyedUserNickname,
+        c.create_time as createTime
+    FROM
+        `comment` as c
+    left join
+        users as u
+    on
+        c.comment_user_id = u.id
+    left join
+        `comment` as fc
+    on
+        c.father_comment_id = fc.id
+    left join
+        users as fu
+    on
+        fc.comment_user_id = fu.id
+    where
+        c.vlog_id = #{paramMap.vlogId}
+    order by
+        c.like_counts desc,
+        c.create_time desc
+  </select>
+</mapper>
